@@ -13,10 +13,20 @@ public class BooksRepository : IInMemoryRepository<BooksDTO>
         booksDepot.Add(entity);
         return entity;
     }
-    public BooksDTO Delete(BooksDTO entity) => booksDepot.Remove(entity) ? entity : null;
+    public bool Delete(BooksDTO entity) => booksDepot.Remove(entity) ? true : false;
     
 
-    public BooksDTO Get(int id) => booksDepot.FirstOrDefault(x => x.Id == id);
+    public Tuple<BooksDTO,Boolean> Get(int id)
+    {
+        try 
+        {
+            return new Tuple<BooksDTO,Boolean>(booksDepot.First(x => x.Id == id), true);
+        }
+        catch (Exception)
+        {
+            return new Tuple<BooksDTO,Boolean>(new BooksDTO(), false);
+        }
+    }
 
     public IEnumerable<BooksDTO> GetAll() => booksDepot;
 

@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -14,24 +15,23 @@ builder.Services.AddSingleton<IInMemoryRepository<BooksDTO>, BooksRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 var BooksRepository = new BooksRepository();
 
-app.MapGet("/", () =>{
+app.MapGet("books", () =>{
     return BooksRepository.GetAll();
-})
-.Produces<IEnumerable<BooksDTO>>(StatusCodes.Status200OK)
-.WithDisplayName("Get All Books")
-.WithName("GetAllBooks")
-.WithTags("Getters")
-.WithGroupName("Books");
+}).Produces<IEnumerable<BooksDTO>>(StatusCodes.Status200OK).WithTags("Books");
+
+app.MapPost("books", (BooksDTO model) =>{
+    return BooksRepository.Add(model);
+}).Accepts<BooksDTO>("application/json").Produces<BooksDTO>(StatusCodes.Status201Created).WithTags("Books");
+
+app.MapGet("book", (int id) =>{
+    return BooksRepository.Get(id);
+}).Produces<BooksDTO>(StatusCodes.Status200OK).WithTags("Books");
 
 
 app.Urls.Add("http://localhost:3000"); //If you want to run the app on a different port.
