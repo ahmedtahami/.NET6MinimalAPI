@@ -20,6 +20,8 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 var BooksRepository = new BooksRepository();
+var dotNetVer = Environment.Version.ToString()[0];
+app.MapGet("/", () => $"Hello World! This is .NET {dotNetVer} Minimal API").ExcludeFromDescription();
 
 app.MapGet("books", () =>{
     return BooksRepository.GetAll();
