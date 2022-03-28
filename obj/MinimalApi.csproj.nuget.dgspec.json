@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalApi.csproj": {}
+    "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalAPI.csproj": {}
   },
   "projects": {
-    "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalApi.csproj": {
+    "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalApi.csproj",
-        "projectName": "MinimalApi",
-        "projectPath": "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalApi.csproj",
+        "projectUniqueName": "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalAPI.csproj",
+        "projectName": "MinimalAPI",
+        "projectPath": "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\MinimalAPI.csproj",
         "packagesPath": "C:\\Users\\anaeem\\.nuget\\packages\\",
         "outputPath": "D:\\Ahmed\\Learning\\.NET6MinimalAPI\\obj\\",
         "projectStyle": "PackageReference",

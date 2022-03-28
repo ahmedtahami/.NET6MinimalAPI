@@ -2,6 +2,11 @@
 // hidden auto-generated file — [ProjectName].GlobalUsings.g.cs. You can define a separate class to keep all 
 // your using statements in one place.
 
+global using MinimalAPI.Endpoints;
+global using MinimalAPI.Repositories;
+global using MinimalAPI.DTO;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IInMemoryRepository<BooksDTO>, BooksRepository>();
+builder.Services.AddSingleton<IBooksRepository, BooksRepository>();
 
 var app = builder.Build();
 
@@ -18,24 +23,20 @@ var app = builder.Build();
 app.UseSwagger();
 app.UseSwaggerUI();
 app.UseHttpsRedirection();
-
-var BooksRepository = new BooksRepository();
-var dotNetVer = Environment.Version.ToString()[0];
-app.MapGet("/", () => $"Hello World! This is .NET {dotNetVer} Minimal API").ExcludeFromDescription();
-
-app.MapGet("books", () =>{
-    return BooksRepository.GetAll();
-}).Produces<IEnumerable<BooksDTO>>(StatusCodes.Status200OK).WithTags("Books");
-
-app.MapPost("books", (BooksDTO model) =>{
-    return BooksRepository.Add(model);
-}).Accepts<BooksDTO>("application/json").Produces<BooksDTO>(StatusCodes.Status201Created).WithTags("Books");
-
-app.MapGet("book", (int id) =>{
-    return BooksRepository.Get(id);
-}).Produces<BooksDTO>(StatusCodes.Status200OK).WithTags("Books");
+app.ConfigureBooksAPI();
+app.ConfigureDefaultAPI();
 
 
-app.Urls.Add("http://localhost:3000"); //If you want to run the app on a different port.
-app.Urls.Add("http://localhost:5001"); //You can also run the app on multiple ports.
+
+// app.MapGet("books", () =>{
+//     return BooksRepository.GetAll();
+// }).Produces<IEnumerable<BooksDTO>>(StatusCodes.Status200OK).WithTags("Books");
+
+// app.MapPost("books", (BooksDTO model) =>{
+//     return BooksRepository.Add(model);
+// }).Accepts<BooksDTO>("application/json").Produces<BooksDTO>(StatusCodes.Status201Created).WithTags("Books");
+
+// app.MapGet("book", (int id) =>{
+//     return BooksRepository.Get(id);
+// }).Produces<BooksDTO>(StatusCodes.Status200OK).WithTags("Books");
 app.Run();

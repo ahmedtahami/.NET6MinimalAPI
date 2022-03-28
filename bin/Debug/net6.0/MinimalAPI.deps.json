@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "MinimalApi/1.0.0": {
+      "MinimalAPI/1.0.0": {
         "dependencies": {
           "Swashbuckle.AspNetCore": "6.3.0"
         },
         "runtime": {
-          "MinimalApi.dll": {}
+          "MinimalAPI.dll": {}
         }
       },
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
@@ -64,7 +64,7 @@
     }
   },
   "libraries": {
-    "MinimalApi/1.0.0": {
+    "MinimalAPI/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

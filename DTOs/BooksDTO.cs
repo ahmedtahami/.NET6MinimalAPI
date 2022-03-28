@@ -1,12 +1,15 @@
-public class BooksDTO : IDisposable
+namespace MinimalAPI.DTO
 {
-    public int Id { get; set; }
-    public string? Title { get; set; }
-    public string? Author { get; set; }
-    public string? Description { get; set; }
-
-    public void Dispose()
+    public class BooksDTO : IDisposable
     {
-        throw new NotImplementedException();
+        public int Id { get; set; }
+        public string? Title { get; set; }
+        public string? Author { get; set; }
+        public string? Description { get; set; }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
