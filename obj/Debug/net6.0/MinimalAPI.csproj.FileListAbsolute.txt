@@ -25,3 +25,10 @@ D:\Ahmed\Learning\.NET6MinimalAPI\obj\Debug\net6.0\refint\MinimalAPI.dll
 D:\Ahmed\Learning\.NET6MinimalAPI\obj\Debug\net6.0\MinimalAPI.pdb
 D:\Ahmed\Learning\.NET6MinimalAPI\obj\Debug\net6.0\MinimalAPI.genruntimeconfig.cache
 D:\Ahmed\Learning\.NET6MinimalAPI\obj\Debug\net6.0\ref\MinimalAPI.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Ahmed\Learning\.NET6MinimalAPI\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
